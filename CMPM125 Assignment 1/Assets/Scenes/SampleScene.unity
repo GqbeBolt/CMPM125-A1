@@ -2251,7 +2251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 061fe8b75a1fd93409e73579e03e7cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  power: 5
+  power: 20
   turnSpeed: 5
   next: {fileID: 2092595132}
   timeLabel: {fileID: 1180658802}
