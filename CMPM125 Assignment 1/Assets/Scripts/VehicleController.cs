@@ -28,6 +28,7 @@ public class VehicleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(desired_accelerationX * power + " | " + desired_accelerationZ * power);
         GetComponent<Rigidbody>().AddRelativeForce(new Vector3(desired_accelerationX * power, 0, desired_accelerationZ * power));
         float dx = (Mouse.current.position.x.value - Screen.width / 2) / 200;
         if (Mathf.Abs(dx) > 0.01f)
@@ -46,7 +47,7 @@ public class VehicleController : MonoBehaviour
         Vector2 movement = action.Get<Vector2>();
         desired_accelerationZ = -movement.x;
         desired_accelerationX = movement.y;
-       
+
     }
 
     public void resetTime()

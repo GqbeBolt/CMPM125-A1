@@ -4,7 +4,6 @@ using UnityEngine;
 public class WaypointController : MonoBehaviour
 {
 
-
     public WaypointController next;
 
     public MeshRenderer left, right;
@@ -15,8 +14,10 @@ public class WaypointController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var vehicle = other.gameObject.GetComponent<VehicleController>();
-        if (vehicle != null)
+        if (vehicle != null && vehicle.next == this)
         {
+            vehicle.next = this.next;
+
             next.left.materials[0].color = Color.red;
             next.right.materials[0].color = Color.red;
 
